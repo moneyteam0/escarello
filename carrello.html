@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini-carrello</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Mini-carrello</h1>
+  <p class="negozio">Cartoleria TPSIT</p>
+
+  <form action="carrello.php" method="post">
+    <!-- prodotti: un campo quantità per ogni prodotto (0 = non lo compro) -->
+    <table>
+      <thead>
+        <tr>
+          <th>Prodotto</th>
+          <th>Prezzo</th>
+          <th>Quantità</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><label for="quaderno">Quaderno</label></td>
+          <td class="prezzo">2,50 €</td>
+          <td><input type="number" id="quaderno" name="quaderno" value="0" min="0"></td>
+        </tr>
+        <tr>
+          <td><label for="penna">Penna</label></td>
+          <td class="prezzo">1,20 €</td>
+          <td><input type="number" id="penna" name="penna" value="0" min="0"></td>
+        </tr>
+        <tr>
+          <td><label for="zaino">Zaino</label></td>
+          <td class="prezzo">35,00 €</td>
+          <td><input type="number" id="zaino" name="zaino" value="0" min="0"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- checkbox: zero, uno o due extra; con [] arrivano in un array -->
+    <fieldset>
+      <legend>Extra</legend>
+      <label><input type="checkbox" name="extra[]" value="regalo"> confezione regalo (+3,00 €)</label>
+      <label><input type="checkbox" name="extra[]" value="express"> spedizione express (+7,00 €)</label>
+    </fieldset>
+
+    <label>Codice sconto: <input type="text" name="codice"></label>
+
+    <p><button type="submit">Calcola il totale</button></p>
+  </form>
+</body>
+
+</html>
